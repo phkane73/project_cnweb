@@ -4,9 +4,13 @@
         <div class="col-md-10" style="height: 50px;">
             <div class="hotline text-light ml-3" style="line-height: 50px; display: inline-block; cursor: default;">Hotline: 0857487577</div>
             <div class="login-register float-right mr-3" style="display: inline-block; line-height: 50px;">
-                <a href="/login" class="login text-light">Đăng nhập</a>
-                <span class="text-warning">/</span>
-                <a href="/register" class="register text-light">Đăng ký</a>
+                <?php if (!\App\SessionGuard::isUserLoggedIn()) : ?>
+                    <a href="/login" class="login text-light">Đăng nhập</a>
+                    <span class="text-warning">/</span>
+                    <a href="/register" class="register text-light">Đăng ký</a>
+                <?php else : ?>
+                    <a href="/logout" class="register text-light">Đăng xuất</a>
+                <?php endif ?>
             </div>
             <div class="social_media h3 mt-2 float-right mr-4" style="display: inline-block;">
                 <a href="https://www.facebook.com/profile.php?id=100079908379373" class="facebook"><i class="fa-brands fa-facebook text-light mr-2"></i></a>
@@ -43,12 +47,19 @@
                     </div>
                 </div>
             </div>
-            <a href="#" class="user" style="color: black;">
-                <i class="fa-solid fa-user h3 m-3 float-right" style="line-height: 68px; padding-top: 16px;"></i>
+            <a href="#" class="cart" style="color: black; margin-left: 10px;">
+                <i class="fa-sharp fa-solid fa-cart-shopping h4" style="line-height: 68px; padding-top: 16px;"></i>
             </a>
-            <a href="#" class="cart" style="color: black;">
-                <i class="fa-sharp fa-solid fa-cart-shopping h3 m-3 float-right" style="line-height: 68px; padding-top: 16px;"></i>
-            </a>
+            <div style="display: inline-block; margin-left: 10px;">
+                <?php if (!\App\SessionGuard::isUserLoggedIn()) : ?>
+                    <a href="#" class="cart" style="color: black; margin-left: 10px;">
+                        <i class="fa-solid fa-user h4" style="line-height: 68px; padding-top: 16px;"></i>
+                    </a>
+                <?php else : ?>
+                    <Strong style="cursor: default;"><?php echo \App\SessionGuard::user()->tenKh ?></Strong>
+                <?php endif ?>
+
+            </div>
         </div>
     </div>
 </div>

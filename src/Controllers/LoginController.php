@@ -7,10 +7,6 @@ use App\SessionGuard as Guard;
 
 class LoginController extends Controller
 {
-    // public function login()
-    // {
-    //     $this->sendPage('login');
-    // }
     public function showLoginForm()
     {
         if (Guard::isUserLoggedIn()) {
@@ -51,7 +47,7 @@ class LoginController extends Controller
     public function logout()
     {
         Guard::logout();
-        redirect('/login');
+        redirect('/home');
     }
 
     protected function filterUserCredentials(array $data)

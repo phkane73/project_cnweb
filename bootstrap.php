@@ -31,6 +31,7 @@ $router = new \Bramus\Router\Router();
 $router->get('/', '\App\Controllers\HomeController@index');
 $router->get('/login', '\App\Controllers\LoginController@showLoginForm');
 $router->post('/login', '\App\Controllers\LoginController@login');
+$router->get('/logout', '\App\Controllers\LoginController@logout');
 $router->get('/register', '\App\Controllers\RegisterController@showRegisterForm');
 $router->post('/register', '\App\Controllers\RegisterController@register');
 $router->get('/abouts', '\App\Controllers\AboutsController@about');

@@ -29,19 +29,16 @@ class RegisterController extends Controller
 
     public function register()
     {
-        $this->saveFormValues($_POST, ['password', 'password_confirmation']);
+        $this->saveFormValues($_POST, ['password', 're_password']);
 
         $data = $this->filterUserData($_POST);
         $model_errors = User::validate($data);
         if (empty($model_errors)) {
-            // Dữ liệu hợp lệ...
             $this->createUser($data);
 
             $messages = ['success' => 'User has been created successfully.'];
             redirect('/login', ['messages' => $messages]);
         }
-
-        // Dữ liệu không hợp lệ...
         redirect('/register', ['errors' => $model_errors]);
     }
 
@@ -51,7 +48,8 @@ class RegisterController extends Controller
             'tenKh' => $data['tenKh'] ?? null,
             'sdt' => $data['sdt'] ?? null,
             'password' => $data['password'] ?? null,
-            'password_confirmation' => $data['password_confirmation'] ?? null
+            're_password' => $data['re_password'] ?? null,
+            'diaChi' => $data['diaChi'] ?? null
         ];
     }
 
@@ -60,7 +58,8 @@ class RegisterController extends Controller
         return User::create([
             'tenKh' => $data['tenKh'],
             'sdt' => $data['sdt'],
-            'password' => password_hash($data['password'], PASSWORD_DEFAULT)
+            'password' => password_hash($data['password'], PASSWORD_DEFAULT),
+            'diaChi' => $data['diaChi']
         ]);
     }
 }
