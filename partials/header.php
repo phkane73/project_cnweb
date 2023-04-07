@@ -27,7 +27,7 @@
             </a>
             <ul class="menu_header p-2" style="display: inline-flex; line-height: 100px;">
                 <li class="home mr-5">
-                    <a href="/" class="h5 text-uppercase" style="color: black;">Trang chủ</a>
+                    <a href="/" class="h5 text-uppercase" style="color: black;">Home_Page</a>
                 </li>
                 <li class="female mr-5">
                     <a href="#" class="h5 text-uppercase" style="color: black;">Nữ</a>
