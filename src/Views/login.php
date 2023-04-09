@@ -1,7 +1,12 @@
+<?php
+define('LOGINNAME', 'Đăng nhập');
+$this->layout("layouts/default", ["title" => LOGINNAME]);
+?>
+<?php $this->start("page") ?>
 <div class="container">
     <div class="row">
         <div class="col-md-6 offset-md-3">
-            <div class="card" style="margin-top: 100px;">
+            <div class="card" style="margin: 70px 0 70px 0;">
                 <div class="card-header text-center">
                     <a href="/">
                         <i class="fa-solid fa-house h3 float-left m-0" style="line-height: 60px;"></i>
@@ -36,3 +41,4 @@
         </div>
     </div>
 </div>
+<?php $this->stop() ?>

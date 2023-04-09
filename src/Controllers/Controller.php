@@ -35,4 +35,10 @@ class Controller
 	{
 		return session_get_once('form', []);
 	}
+
+	public function sendNotFound()
+	{
+		http_response_code(404);
+		exit($this->view->render('errors/error404'));
+	}
 }

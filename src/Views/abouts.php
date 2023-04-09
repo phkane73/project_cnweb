@@ -1,6 +1,8 @@
 <?php
-include '../partials/header.php';
+define('ABOUTSNAME', 'Abouts');
+$this->layout("layouts/default", ["title" => ABOUTSNAME]);
 ?>
+<?php $this->start("page") ?>
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -8,6 +10,4 @@ include '../partials/header.php';
         </div>
     </div>
 </div>
-<?php
-include '../partials/footer.php';
-?>
+<?php $this->stop() ?>

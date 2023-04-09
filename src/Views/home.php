@@ -1,6 +1,10 @@
 <?php
-define('TITLE', 'Trang chủ');
-include '../partials/header.php';
+define('HOMENAME', "IVY moda");
+$this->layout("layouts/default", ["title" => HOMENAME]);
+?>
+<?php $this->start("page") ?>
+
+<?php
 include '../partials/carousel.php';
 ?>
 <div class="container">
@@ -57,6 +61,4 @@ include '../partials/carousel.php';
         </div>
     </div>
 </div>
-<?php
-include '../partials/footer.php';
-?>
+<?php $this->stop() ?>

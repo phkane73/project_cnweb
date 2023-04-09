@@ -35,4 +35,6 @@ $router->get('/logout', '\App\Controllers\LoginController@logout');
 $router->get('/register', '\App\Controllers\RegisterController@showRegisterForm');
 $router->post('/register', '\App\Controllers\RegisterController@register');
 $router->get('/abouts', '\App\Controllers\AboutsController@about');
+$router->get('/male', '\App\Controllers\MaleController@renderMalePage');
+$router->set404('\App\Controllers\Controller@sendNotFound');
 $router->run();

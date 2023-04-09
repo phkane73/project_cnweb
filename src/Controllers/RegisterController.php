@@ -11,7 +11,7 @@ class RegisterController extends Controller
     public function __construct()
     {
         if (Guard::isUserLoggedIn()) {
-            redirect('/home');
+            redirect('/');
         }
 
         parent::__construct();

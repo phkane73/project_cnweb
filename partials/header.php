@@ -21,19 +21,19 @@
 </div>
 <div class="container">
     <div class="row">
-        <div class="col-md-12" style="height: 130px;">
+        <div class="col-md-12 p-0" style="height: 130px;">
             <a href="/">
                 <img class="logo" src="/image/logo/logo_web.png" alt="" style="width: 220px; height: 70px; margin: 5px;">
             </a>
             <ul class="menu_header p-2" style="display: inline-flex; line-height: 100px;">
                 <li class="home mr-5">
-                    <a href="/" class="h5 text-uppercase" style="color: black;">Home_Page</a>
+                    <a href="/" class="h5 text-uppercase" style="color: black;">Trang chủ</a>
                 </li>
                 <li class="female mr-5">
                     <a href="#" class="h5 text-uppercase" style="color: black;">Nữ</a>
                 </li>
                 <li class="male mr-5">
-                    <a href="#" class="h5 text-uppercase" style="color: black;">Nam</a>
+                    <a href="/male" class="h5 text-uppercase" style="color: black;">Nam</a>
                 </li>
                 <li class="about mr-1">
                     <a href="/abouts" class="h5 text-uppercase" style="color: black;">Abouts</a>

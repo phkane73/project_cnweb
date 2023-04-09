@@ -10,7 +10,7 @@ class LoginController extends Controller
     public function showLoginForm()
     {
         if (Guard::isUserLoggedIn()) {
-            redirect('/home');
+            redirect('/');
         }
 
         $data = [
@@ -33,7 +33,7 @@ class LoginController extends Controller
             $errors['sdt'] = 'Invalid sdt or password.';
         } else if (Guard::login($user, $user_credentials)) {
             // Đăng nhập thành công...
-            redirect('/home');
+            redirect('/');
         } else {
             // Sai mật khẩu...
             $errors['password'] = 'Invalid email or password.';
@@ -47,7 +47,7 @@ class LoginController extends Controller
     public function logout()
     {
         Guard::logout();
-        redirect('/home');
+        redirect('/');
     }
 
     protected function filterUserCredentials(array $data)
