@@ -30,7 +30,7 @@
                     <a href="/" class="h5 text-uppercase" style="color: black;">Trang chủ</a>
                 </li>
                 <li class="female mr-5">
-                    <a href="#" class="h5 text-uppercase" style="color: black;">Nữ</a>
+                    <a href="/female" class="h5 text-uppercase" style="color: black;">Nữ</a>
                 </li>
                 <li class="male mr-5">
                     <a href="/male" class="h5 text-uppercase" style="color: black;">Nam</a>

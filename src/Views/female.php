@@ -11,7 +11,7 @@ $this->layout("layouts/default", ["title" => HOMENAME]);
                     <h5>Thời trang nam</h5>
                     <a href="/" style="color: black;">Trang chủ</a>
                     <span>></span>
-                    <span class="text-secondary" style="cursor: default;">Nam</span>
+                    <span class="text-secondary" style="cursor: default;">Nữ</span>
                 </div>
             </div>
         </div>
@@ -24,7 +24,7 @@ $this->layout("layouts/default", ["title" => HOMENAME]);
 
             use App\Models\Products;
 
-            $products = Products::where('gender', 'Nam')->get();
+            $products = Products::where('gender', 'Nữ')->get();
             foreach ($products as $product) {
                 echo ' <div class="card mr-2 mb-4" style="width:24%">
                 <img class="card-img-top" src="./image/products/' . $product->imageSP . '">

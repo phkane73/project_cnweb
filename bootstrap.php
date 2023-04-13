@@ -36,5 +36,10 @@ $router->get('/register', '\App\Controllers\RegisterController@showRegisterForm'
 $router->post('/register', '\App\Controllers\RegisterController@register');
 $router->get('/abouts', '\App\Controllers\AboutsController@about');
 $router->get('/male', '\App\Controllers\MaleController@renderMalePage');
+$router->get('/female', '\App\Controllers\FemaleController@renderFemalePage');
+// admin
+$router->get('/admin', '\App\Controllers\AdminController@adminHome');
+$router->post('/admin', '\App\Controllers\AdminController@addProduct');
+$router->get('/admin/listProducts', '\App\Controllers\AdminController@listProducts');
 $router->set404('\App\Controllers\Controller@sendNotFound');
 $router->run();

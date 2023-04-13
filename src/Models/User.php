@@ -8,7 +8,7 @@ class User extends Model
 {
     public $timestamps = false;
     protected $table = 'users';
-    protected $fillable = ['tenKh', 'password', 'sdt', 'diaChi'];
+    protected $fillable = ['tenKh', 'password', 'sdt', 'diaChi', 'role'];
     protected $primaryKey = 'idKh';
 
     public static function validate(array $data)

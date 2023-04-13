@@ -25,18 +25,20 @@ class LoginController extends Controller
     public function login()
     {
         $user_credentials = $this->filterUserCredentials($_POST);
-
         $errors = [];
         $user = User::where('sdt', $user_credentials['sdt'])->first();
         if (!$user) {
             // Người dùng không tồn tại...
             $errors['sdt'] = 'Invalid sdt or password.';
-        } else if (Guard::login($user, $user_credentials)) {
-            // Đăng nhập thành công...
-            redirect('/');
+        } else if (Guard::login($user, $user_credentials, Guard::roleUser($user))) {
+            if (Guard::roleUser($user) == 'admin') {
+                redirect('/admin');
+            } else {
+                redirect('/');
+            }
         } else {
             // Sai mật khẩu...
-            $errors['password'] = 'Invalid email or password.';
+            $errors['password'] = 'Invalid password.';
         }
 
         // Đăng nhập không thành công: lưu giá trị trong form, trừ password
